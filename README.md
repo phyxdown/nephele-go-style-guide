@@ -1,7 +1,5 @@
 # Nephele Go Style Guide
 
-# Introduction
-
 This style guide outlines the coding conventions of Nephele team.
 
 # Background
