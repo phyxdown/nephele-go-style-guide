@@ -8,8 +8,6 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
 
 ## Goals of the Style Guide
 
-There are a few core goals that we believe this guide should serve:
-
 **No conflict with go fmt tool**
 
 **Optimize for the reader, not the writer**
