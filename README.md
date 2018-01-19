@@ -48,3 +48,64 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
     import "time"
     import "net/http"
 ```
+
+## Indent
+
+Indentation MUST use tabs.
+
+
+## Variables
+
+A suffixed filename is needed for global private variable or const.
+
+**For example:**
+```go
+    //foo.go
+    var a_foo int
+    func b() {
+        ...
+    }
+```
+
+**Not:**
+```go
+    //foo.go
+    var a int
+    func b() {
+        ...
+    }
+```
+
+
+## Functions
+
+Global functions are only allowed in the file whose package has the same name.
+
+**Allowed:**
+```go
+    package foo
+    //foo.go
+
+    func A() {
+        ...
+    }
+
+    func a() {
+        ...
+    }
+```
+
+**Banned:**
+```go
+    package foo
+    //goo.go
+
+    func B() {
+        ...
+    }
+
+    func b() {
+        ...
+    }
+```
+
