@@ -67,21 +67,28 @@ Indentation MUST use tabs.
 
 ## Blank line
 
-Blank line between variable and function.
+Blank line between variable, function, interface and struct.
 
 **For example:**
 ```go
-    var a
+    var a int
 
     func b() {
+        ...
+    }
+
+    type c struct {
         ...
     }
 ```
 
 **Not:**
 ```go
-    var a
+    var a int
     func b() {
+        ...
+    }
+    type c struct {
         ...
     }
 ```
@@ -171,6 +178,7 @@ A suffixed filename is needed for global private variable or const.
 **For example:**
 ```go
     //foo.go
+
     var a_foo int
     const b_foo = 1
 
@@ -182,6 +190,7 @@ A suffixed filename is needed for global private variable or const.
 **Not:**
 ```go
     //foo.go
+
     var a int
     const b = 1
 
@@ -192,7 +201,7 @@ A suffixed filename is needed for global private variable or const.
 
 ## Functions
 
-We name the file whose package has the same name "the core file" and the others "the branch file".
+We name the file whose name is the same as its package name "the core file" and the others "the branch file".
 Global functions are only allowed in core files.
 
 **Allowed:**
@@ -223,6 +232,75 @@ Global functions are only allowed in core files.
     }
 ```
 
-## Struct
+So in branch file, we integrate functions into a single struct, PROBABLY a struct whose name is the same as the branch file name.
+
+**For example:**
+```go
+    package foo
+    //goo.go
+
+    type goo struct {
+        a int
+    }
+    
+    const a_goo = 0
+    const b_goo = 1
+
+    var c_goo int = 2
+    var d_goo int = 3
+
+    var instance_goo goo = &goo{}
+
+    func (g goo) step1() {
+        ...
+    }
+
+    func (g goo) step2() {
+        ...
+    }
+
+    func (g goo) Do() {
+        g.step1()
+        g.step2()
+    }
+```
+
+**Not:**
+```go
+    package foo
+    //goo.go
+
+    func step1() {
+        ...
+    }
+
+    func step2() {
+        ...
+    }
+
+    func do() {
+        step1()
+        step2()
+    }
+```
+
+**Nor:**
+```go
+    package foo
+    //goo.go
+
+    func gooStep1() {
+        ...
+    }
+
+    func gooStep2() {
+        ...
+    }
+
+    func gooDo() {
+        gooStep1()
+        gooStep2()
+    }
+```
 
 
