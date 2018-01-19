@@ -14,7 +14,9 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
 
 **Avoid tricky realization**
 
-**Be mindful of our scale**
+**Be mindful of scale**
+
+**No impact on interface**
 
 **Concede to optimization when necessary**
 
@@ -28,8 +30,8 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
 **For example:**
 ```go
     import (
-        p_time "time"
-        p_http "net/http"
+        time_p "time"
+        http_p "net/http"
     )
 ```
 
