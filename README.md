@@ -53,6 +53,104 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
 
 Indentation MUST use tabs.
 
+## Blank line
+
+Blank line between variable and function.
+
+**For example:**
+```go
+    var a
+
+    func b() {
+        ...
+    }
+```
+
+**Not:**
+```go
+    var a
+    func b() {
+        ...
+    }
+```
+
+
+
+## Naming
+
+Basically we use Camel-Case.
+
+ALSO PROBABLY
+
+**No preposition:**
+```go
+    func getUsername() {
+        ...
+    }
+
+
+    func GetUsername() {
+        ...
+    }
+
+    func (name *Username) TryGet() string {
+        ...
+    }
+
+    func (name *Username) String() string {
+        ...
+    }
+```
+
+**Not:**
+```go
+    func GetNameOfUser() {
+        ...
+    }
+
+    func GetTheNameOfUser() {
+        ...
+    }
+
+    func (name *Username) TryToGet() string {
+        ...
+    }
+
+    func (name *Username) ToString() string {
+        ...
+    }
+```
+
+**Adorned nouns and verbs regarded as one:**
+```go
+    func GetUsername() {
+        ...
+    }
+
+    func QuicklygetUsername() {
+    }
+```
+
+**Not:**
+```go
+    func QuicklyGetUserName() {
+        ...
+    }
+```
+
+**Verb before noun:**
+```go
+    func GetName() {
+        ...
+    }
+```
+
+**Not:**
+```go
+    func NameGet() {
+        ...
+    }
+```
 
 ## Variables
 
@@ -62,7 +160,9 @@ A suffixed filename is needed for global private variable or const.
 ```go
     //foo.go
     var a_foo int
-    func b() {
+    const b_foo = 1
+
+    func c() {
         ...
     }
 ```
@@ -71,15 +171,17 @@ A suffixed filename is needed for global private variable or const.
 ```go
     //foo.go
     var a int
-    func b() {
+    const b = 1
+
+    func c() {
         ...
     }
 ```
 
-
 ## Functions
 
-Global functions are only allowed in the file whose package has the same name.
+We name the file whose package has the same name "the core file" and the others "the branch file".
+Global functions are only allowed in core files.
 
 **Allowed:**
 ```go
@@ -108,4 +210,7 @@ Global functions are only allowed in the file whose package has the same name.
         ...
     }
 ```
+
+## Struct
+
 
