@@ -24,6 +24,18 @@ Nephele is a complete solution to enterprise multimedia needs. Go is one of the 
 
 * [How to Import Package](#how-to-import-package)
 
+* [Indent](#indent)
+
+* [Blank line](#blank-line)
+
+* [Naming](#naming)
+
+* [Variables](#variables)
+
+* [Functions](#functions)
+
+* [Struct](#struct)
+
 
 ## How to Import Package
 
